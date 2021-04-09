@@ -18,6 +18,7 @@
 
         public void PrepararCafe()
         {
+            // Quando um metodo é privado, só é possível utilizar dentro da classe
             Testar();
             AquecerAgua();
             MoerGraos();
