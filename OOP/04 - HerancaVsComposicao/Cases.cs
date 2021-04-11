@@ -4,10 +4,16 @@ namespace OOP
 {
     #region Caso 1
 
+    // Relembrando herança: Sempre perguntar se a classe que está herdando "É UM" a classe herdade
+    // Aplicando com a visão abaixo: Uma PessoaFisica "É UM (a)" Pessoa?
+
+    // Caso a PessoaFisica possua caracteriscias que não fazem parte de uma Pessoa, significa que está sendo forçado uma herança
+    // E caso a classe herdada possua caracteriascas que a classe que está herdando não precisa ter, entra no mesmo contexto anterior.
     public class PessoaFisica : Pessoa
     {
         public string Cpf { get; set; }
     }
+
 
     public class PessoaFisica2
     {
@@ -15,6 +21,8 @@ namespace OOP
         public string Cpf { get; set; }
     }
 
+
+    // A composição funciona da mesma forma que a herança, então nesse Caso 1, ambas as formas fincionarão.
     public class TestesHerancaComposicao
     {
         public TestesHerancaComposicao()
@@ -35,8 +43,10 @@ namespace OOP
                 },
                 Cpf = "32165498765"
             };
-
+            // Na herança o valor é manibulado assim.
             var nomeHeranca = pessoaHeranca.Nome;
+
+            // na composição o valor é manipulado da forma abaixo devido ao tipo Pessoa ser instanciado dentro da classe.
             var nomeComposicao = pessoaComposicao.Pessoa.Nome;
         }
     }

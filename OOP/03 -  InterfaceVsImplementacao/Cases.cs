@@ -1,5 +1,8 @@
 ﻿namespace OOP
 {
+    // Uma interface é uma especie de contrato, ou seja, toda classe que implenta uma interface, é obrigado a implementar os metódos implementados na mesma.
+    // OBS: Pode se confundir com classes Abstratas
+    // Diferença: Classe abstrata tem que implentar todos os metodos e comportamentos, uma interface só tem que implementar os metodos.
     public interface IRepositorio
     {
         void Adicionar();
@@ -30,6 +33,8 @@
     {
         public void Processo()
         {
+            // Implementação: uso direto dos comportamentos da classe.
+            // Problemas nesse caso é que se tiver uma mudança na classe concreta, esse metodos "quebraria"
             var repositorio = new Repositorio();
             repositorio.Adicionar();
         }
