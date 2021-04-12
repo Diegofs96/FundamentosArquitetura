@@ -10,9 +10,19 @@ namespace DemoDI.Cases
             IOperacaoSingleton singleton,
             IOperacaoSingletonInstance singletonInstance)
         {
+            // Transient é o modelo padrão e mais comum de usar quando nbão sabe qual modelo usar
+            // Aquela dependencia será criado toda vez que aquela dependencia for injetada
+            // Consome mais memoria
             Transient = transient;
+
+            // Scoped são criados uma vez por client request
+            // Usa sempre o mesmo para não consumir muita memoria
             Scoped = scoped;
+
+            // Singleton cria somente uma unica instancia para toda aplicação
+            // quando criado, fica ativo por enquanto a aplicação ficar rodando
             Singleton = singleton;
+
             SingletonInstance = singletonInstance;
         }
 
