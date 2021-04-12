@@ -17,6 +17,7 @@ namespace DemoDI
 
         public IConfiguration Configuration { get; }
 
+        // Configuração da aplicação
         public void ConfigureServices(IServiceCollection services)
         {
             #region Lifecycle
@@ -31,7 +32,11 @@ namespace DemoDI
 
             #region VidaReal
 
+            //AddScoped = para registrar uma dependencia
+            // Quando receber uma interface IClienteRepository, me forneça uma intancia de ClienteRepository
             services.AddScoped<IClienteRepository, ClienteRepository>();
+
+            // Quando receber uma interface IClienteServices, me forneça uma intancia de ClienteServices
             services.AddScoped<IClienteServices, ClienteServices>();
 
             #endregion
